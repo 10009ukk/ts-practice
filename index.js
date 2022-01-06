@@ -1,8 +1,11 @@
-const man = {
-    name: "man",
-    age: 19,
-    sex: "male"
-};
+class Humen {
+    constructor(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+}
+const man = new Humen("man", 19, "male");
 const number = (obj) => {
     return `str ${obj.name} num ${obj.age}`;
 };

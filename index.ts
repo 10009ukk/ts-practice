@@ -1,14 +1,16 @@
-interface Humen {
-    name:string,
-    age:number,
-    sex:string
-}
+class Humen {
+    public name:string;    
+    public age:number; // not pravite
+    public sex:string;
 
-const man = {
-    name: "man",
-    age: 19, // this "19" to error
-    sex: "male"
+    constructor(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+
 }
+const man = new Humen("man", 19, "male");
 
 const number = (obj:Humen):string => {
     return `str ${obj.name} num ${obj.age}`;
