@@ -1,14 +1,10 @@
-// readonly 수정 불가함
-var PlayerMaker = function (name) {
-    return {
-        name: name
-    };
-};
-var man = PlayerMaker('man');
-man.age = 19;
-// 에러 man.name = 'jung'
-// tuple 한정된 타입과 수로 배열을 만들 수 있음
-var a = ['man', 19, false];
-// 에러 a[0] = 19
-var b = ['man', 19, false];
-// 에러 a[1] = 19
+// unknown 어떤 값이 들어올지 모르는 경우
+var a;
+// 에러 a = a + 1
+if (typeof a === 'number') {
+    a = a + 1;
+}
+// never 리턴 시키지 않은 채로 에러 발생 시키거나, 실행이 불가능한 경우
+function hello() {
+    throw new Error("ERrr!");
+}

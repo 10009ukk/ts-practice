@@ -1,24 +1,13 @@
-// readonly 수정 불가함
+// unknown 어떤 값이 들어올지 모르는 경우
 
-type Player = {
-    readonly name: string,
-    age?: number
+let a: unknown
+// 에러 a = a + 1
+
+if (typeof a === 'number') {
+    a = a + 1
 }
 
-const PlayerMaker = (name: string) : Player => {
-    return {
-        name
-    }
+// never 리턴 시키지 않은 채로 에러 발생 시키거나, 실행이 불가능한 경우
+function hello(): never {
+    throw new Error("ERrr!");
 }
-
-const man = PlayerMaker('man')
-man.age = 19
-// 에러 man.name = 'jung'
-
-// tuple 한정된 타입과 수로 배열을 만들 수 있음
-
-const a: [string, number, boolean] = ['man', 19, false]
-// 에러 a[0] = 19
-
-const b: readonly [string, number, boolean] = ['man', 19, false]
-// 에러 a[1] = 19
