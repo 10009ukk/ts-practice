@@ -1,10 +1,21 @@
-// unknown 어떤 값이 들어올지 모르는 경우
-var a;
-// 에러 a = a + 1
-if (typeof a === 'number') {
-    a = a + 1;
+// generic 마음대로 이름을 지정할 수 있음
+// 그리고 타입스립트가 자동으로 call signatures 를 유추해줌
+// any 와는 다름
+function nextLevel(arr) {
+    return arr[0];
 }
-// never 리턴 시키지 않은 채로 에러 발생 시키거나, 실행이 불가능한 경우
-function hello() {
-    throw new Error("ERrr!");
-}
+var a = nextLevel([1, 2, 3, 4]);
+var b = nextLevel([1, "2", true, 4]);
+var man = {
+    name: 'man',
+    extraInfo: {
+        favFood: 'mandu'
+    }
+};
+var guk = {
+    name: 'guk',
+    extraInfo: null
+};
+var c = [1, 2, 3, 4];
+var d = [1, 2, 3, 4];
+// useState<number>()
